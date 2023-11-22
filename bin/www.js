@@ -3,7 +3,7 @@ import debug from 'debug';
 import http from 'http';
 import { connect } from 'mongoose';
 
-let port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 var server = http.createServer(app);
