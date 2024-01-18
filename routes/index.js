@@ -13,4 +13,5 @@ router.use('/itineraries', itineriesRouter)
 router.use('/activities',activitiesRouter )
 router.use('/auth',authRouter)
 
+
 export default router;

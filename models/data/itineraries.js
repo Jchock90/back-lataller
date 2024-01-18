@@ -11,7 +11,8 @@ const itineraries = [{
     tags: ['#fibrastextiles ', '#medidasbasicas ', '#ejesdelcuerpo '],
     photo: 'https://res.cloudinary.com/isda/image/upload/c_fill,h_315,w_600/v1/carreras/71540870-c15c-41e9-9a2f-4ad3f760f585',
     comments:'https://latallerbucket.s3.us-east-2.amazonaws.com/prueba.pdf',
-    audio:'https://latallerbucket.s3.us-east-2.amazonaws.com/prueba.mp3'
+    audio:'https://latallerbucket.s3.us-east-2.amazonaws.com/prueba.mp3',
+    textAudio: 'Audio: introducción al taller'
 }]
 
 async function createItineraries(arrayItineraries) {

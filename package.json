@@ -12,6 +12,7 @@
     "activities": "node ./models/data/activities.js"
   },
   "dependencies": {
+    "@mercadopago/sdk-react": "^0.0.16",
     "bcrypt": "^5.1.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
@@ -23,6 +24,7 @@
     "joi": "^17.10.1",
     "joi-oid": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.0.5",
     "mongoose": "^7.4.3",
     "morgan": "~1.9.1",
     "nodemon": "^3.0.1",

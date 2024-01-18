@@ -9,7 +9,8 @@ let schema = new Schema({
     tags: [{ type:String,required:true }],
     photo: { type:String,required:true },
     comments: { type:String,required:false},
-    audio: { type:String,required:false}
+    audio: { type:String,required:false},
+    textAudio: { type:String,required:true}
 },{
     timestamps: true
 })
