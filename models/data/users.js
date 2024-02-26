@@ -8,14 +8,14 @@ const users = [{
     mail: "jesus@qv.com",
     photo: "https://cdn.pixabay.com/photo/2018/03/06/20/45/the-flower-more-beautiful-3204548_1280.jpg",
     password: "Hola1234",
-    country: "Argentina"
+    module: "Argentina"
 },{
     name: "Jesica",
     lastName: "Orcellet",
     mail: "jesi@qv.com",
     photo: "https://cdn.pixabay.com/photo/2018/03/06/20/45/the-flower-more-beautiful-3204548_1280.jpg",
     password: "Hola1234",
-    country: "Argentina"
+    module: "Argentina"
 }]
 
 connect(process.env.LINK_DB)

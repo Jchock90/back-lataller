@@ -1,11 +1,11 @@
 import {model, Schema, Types} from "mongoose";
 
-let collection = 'cities';
+let collection = 'workshops';
 
 let schema = new Schema({
-    country: {type: String, required: true},
+    module: {type: String, required: true},
     photo: {type:String, required: true},
-    city: {type:String, required: true},
+    workshop: {type:String, required: true},
     featuredlocation: {type: String, default: 'edit'},
     description: {type: String, default: 'edit'},
     smalldescription: {type: String, default: 'edit'},
@@ -14,6 +14,6 @@ let schema = new Schema({
     timestamps: true,
 })
 
-let City = model(collection, schema);
+let Workshop = model(collection, schema);
 
-export default City;
+export default Workshop;

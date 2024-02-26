@@ -1,9 +1,9 @@
 import { model,Schema,Types } from "mongoose";
 
-let collection = "itineraries"
+let collection = "modules"
 let schema = new Schema({
     name: { type:String,required:true },
-    city_id: { type:Types.ObjectId,ref:'cities',required:true },
+    workshop_id: { type:Types.ObjectId,ref:'workshops',required:true },
     price: { type:Number,required:true },
     duration: { type:Number,required:true },
     tags: [{ type:String,required:true }],
@@ -15,5 +15,5 @@ let schema = new Schema({
     timestamps: true
 })
 
-let Itinerary = model(collection,schema)
-export default Itinerary
+let Module = model(collection,schema)
+export default Module

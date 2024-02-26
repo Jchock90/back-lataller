@@ -1,16 +1,16 @@
- import City from "../../models/City.js";
+ import Workshop from "../../models/Workshop.js";
 
  export default async (req, res, next) => {
     try {
-        let updatedCity = await City.findByIdAndUpdate(
+        let updatedWorkshop = await Workshop.findByIdAndUpdate(
             req.params.u_id,
             req.body,
             { new: true }
-        ).select('country city smalldescription description')
+        ).select('module workshop smalldescription description')
         return res.status(200).json({
             success: true,
-            message: 'city updated',
-            response: updatedCity
+            message: 'workshop updated',
+            response: updatedWorkshop
         })
     } catch (error) {
         next(error);

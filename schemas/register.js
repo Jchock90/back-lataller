@@ -26,11 +26,11 @@ let registerSchema = joi.object({
         'string.empty': "password can not be empty",
         'any.required':"password is required"
     }),
-    country: joi.string().required().min(3).max(20).messages({
-        'string.min': "country must have at least 3 characters please",
-        'string.max':"country must have less less than 20 characters or be equal to 20 characters please!",
-        'string.empty': "country can not be empty",
-        'any.required':"country is required"
+    module: joi.string().required().min(3).max(20).messages({
+        'string.min': "module must have at least 3 characters please",
+        'string.max':"module must have less less than 20 characters or be equal to 20 characters please!",
+        'string.empty': "module can not be empty",
+        'any.required':"module is required"
     }),
     lastName: joi.string().min(3).max(20).empty('').messages({
         'string.min': "last name must have at least 3 characters please",

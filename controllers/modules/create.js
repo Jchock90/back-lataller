@@ -1,13 +1,13 @@
-import Itinerary from '../../models/Itinerary.js';
+import Module from '../../models/Module.js';
 
 export default async (req, res, next) => {
     try {
         let data = req.body
-        let newItinerary = await Itinerary.create(data)
+        let newModule = await Module.create(data)
         return res.status(201).json({
             success: true,
-            message: 'itinerary created',
-            response: newItinerary._id
+            message: 'module created',
+            response: newModule._id
         })
     } catch (error) {
         next(error);

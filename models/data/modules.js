@@ -1,11 +1,11 @@
 import 'dotenv/config.js'
 import { connect } from 'mongoose'
-import City from '../City.js'
-import Itinerary from '../Itinerary.js'
+import Workshop from '../Workshop.js'
+import Module from '../Module.js'
 
-const itineraries = [{
+const modules = [{
     name: 'Tecnicas',
-    city_id: 'Moldería y medidas',
+    workshop_id: 'Moldería y medidas',
     price: 1000,
     duration: 2,
     tags: ['#fibrastextiles ', '#medidasbasicas ', '#ejesdelcuerpo '],
@@ -15,14 +15,14 @@ const itineraries = [{
     textAudio: 'Audio: introducción al taller'
 }]
 
-async function createItineraries(arrayItineraries) {
+async function createModules(arrayModules) {
     try {
         await connect(process.env.LINK_DB)
-        for (let itinerary of arrayItineraries) {
-            let city = await City.findOne({ city:itinerary.city_id })
-            let city_id = await city._id
-            itinerary.city_id = city_id
-            await Itinerary.create(itinerary)
+        for (let module of arrayModules) {
+            let workshop = await Workshop.findOne({ workshop:module.workshop_id })
+            let workshop_id = await workshop._id
+            module.workshop_id = workshop_id
+            await Module.create(module)
         }
         console.log('done!');
     } catch (error) {
@@ -30,4 +30,4 @@ async function createItineraries(arrayItineraries) {
     }
 }
 
-createItineraries(itineraries)
+createModules(modules)

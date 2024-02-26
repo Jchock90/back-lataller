@@ -1,17 +1,16 @@
-import Itinerary from "../../models/Itinerary.js";
+import Workshop from "../../models/Workshop.js";
 
 export default async (req, res, next) => {
     try {
-
-        let oneItinerary = await Itinerary
+        let oneWorkshop = await Workshop
         .findById(req.params._id)
-        .select('name price duration')
+        .select('module workshop photo')
 
-        if (oneItinerary){
+        if (oneWorkshop){
             return res.status(200).json({
                 success: true,
-                message: 'itinerary found',
-                response: oneItinerary
+                message: 'workshop found',
+                response: oneWorkshop
             })
         } else {
             return res.status(404).json({
@@ -19,7 +18,7 @@ export default async (req, res, next) => {
                 message: 'not found',
                 response: null
             })
-        }    
+        }
     } catch (error) {
         next(error)
     }

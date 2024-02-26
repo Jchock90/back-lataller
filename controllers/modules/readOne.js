@@ -1,16 +1,17 @@
-import City from "../../models/City.js";
+import Module from "../../models/Module.js";
 
 export default async (req, res, next) => {
     try {
-        let oneCity = await City
-        .findById(req.params._id)
-        .select('country city photo')
 
-        if (oneCity){
+        let oneModule = await Module
+        .findById(req.params._id)
+        .select('name price duration')
+
+        if (oneModule){
             return res.status(200).json({
                 success: true,
-                message: 'city found',
-                response: oneCity
+                message: 'module found',
+                response: oneModule
             })
         } else {
             return res.status(404).json({
@@ -18,7 +19,7 @@ export default async (req, res, next) => {
                 message: 'not found',
                 response: null
             })
-        }
+        }    
     } catch (error) {
         next(error)
     }

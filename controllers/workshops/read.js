@@ -1,4 +1,4 @@
-import City from '../../models/City.js';
+import Workshop from '../../models/Workshop.js';
 
 export default async (req, res, next) => {
     try {
@@ -10,23 +10,23 @@ export default async (req, res, next) => {
         }
         
         if (req.query.sort){
-            order.city = req.query.sort
+            order.workshop = req.query.sort
         }
 
-        if (req.query.city){
-            search.city = new RegExp(req.query.city, 'i')
+        if (req.query.workshop){
+            search.workshop = new RegExp(req.query.workshop, 'i')
         }
 
-        let allCities = await City
-            .find(search, 'country city photo smalldescription admin_id')
+        let allWorkshops = await Workshop
+            .find(search, 'module workshop photo smalldescription admin_id')
             .populate('admin_id', 'photo mail name -_id')
             .sort(order)
         
-        if (allCities.length > 0){
+        if (allWorkshops.length > 0){
             return res.status(200).json({
                 succes: true,
-                message: 'cities found',
-                response: allCities
+                message: 'workshops found',
+                response: allWorkshops
             })
         } else {
             return res.status(404).json({

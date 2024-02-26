@@ -1,10 +1,10 @@
-import Itinerary from "../../models/Itinerary.js";
+import Module from "../../models/Module.js";
 
 export default async (req, res, next) => {
     try {
         let { id } = req.params
         let data = req.body
-        let one = await Itinerary.findOneAndUpdate(
+        let one = await Module.findOneAndUpdate(
             { _id:id },
             data,
             { new:true }
@@ -12,13 +12,13 @@ export default async (req, res, next) => {
         if (one) {
             return res.status(200).json({
                 succes: true,
-                message: 'itinerary found',
+                message: 'module found',
                 response: one._id
             })
         } else {
             return res.status(200).json({
                 succes: false,
-                message: 'itinerary not found',
+                message: 'module not found',
                 response: null
             })
         }

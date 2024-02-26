@@ -1,16 +1,16 @@
-import Itinerary from '../../models/Itinerary.js'
+import Module from '../../models/Module.js'
 
 export default async (req,res,next)=> {
     try {
         let queries = {}
-        if (req.query.city_id) {
-            queries.city_id = req.query.city_id
+        if (req.query.workshop_id) {
+            queries.workshop_id = req.query.workshop_id
         }
-        let all = await Itinerary
+        let all = await Module
             .find(queries,'-__v -createdAt -updatedAt')
             .populate({
-                path: "city_id",
-                select: "city photo admin_id",
+                path: "workshop_id",
+                select: "workshop photo admin_id",
                 populate: {
                     path: "admin_id",
                     select: "name photo"
@@ -18,7 +18,7 @@ export default async (req,res,next)=> {
             })
         return res.status(200).json({
             success: true,
-            message: 'itineraries found',
+            message: 'modules found',
             response: all
         })
     } catch (error) {
